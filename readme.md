@@ -6,7 +6,7 @@ PS: web 前端 API 没有绝对的安全，该项目的本意是给不暴露源�
 
 ## 安装  
 ```bash
-composer require 96qbhy/laravel-api-auth
+composer require bei-sheng/laravel-api-auth
 ```
 
 ## 配置
@@ -136,5 +136,4 @@ axios.post('/api/example',{},requestConfig).then(res=>{
 
 
 
-[96qbhy.com](https://96qbhy.com)    
-96qbhy@gmail.com
+[xxxx.com](https://xxxx.com)    
