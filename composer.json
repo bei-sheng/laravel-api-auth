@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "bei-sheng\\LaravelApiAuth\\ServiceProvider"
+                "Qbhy\\LaravelApiAuth\\ServiceProvider"
             ]
         }
     }
