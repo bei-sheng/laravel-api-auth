@@ -1,16 +1,16 @@
 {
-    "name": "96qbhy/laravel-api-auth",
+    "name": "bei-sheng/laravel-api-auth",
     "description": "laravel API 鉴权",
     "license": "MIT",
     "authors": [
         {
-            "name": "xxx",
+            "name": "bei-sheng",
             "email": "xxx@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Qbhy\\LaravelApiAuth\\": "src"
+            "bei-sheng\\LaravelApiAuth\\": "src"
         },
         "files": [
             "src/fn.php"
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Qbhy\\LaravelApiAuth\\ServiceProvider"
+                "bei-sheng\\LaravelApiAuth\\ServiceProvider"
             ]
         }
     }
