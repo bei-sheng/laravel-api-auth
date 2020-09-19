@@ -12,7 +12,7 @@ class Md5 implements SignatureInterface
 {
     public static function sign(string $string, string $secret): string
     {
-        return md5($string . $secret);
+        return strtoupper(md5($string . $secret));
     }
 
     public static function check(string $string, string $secret, string $signature): bool
