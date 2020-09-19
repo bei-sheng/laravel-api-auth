@@ -100,7 +100,7 @@ class Middleware
 
         // 检查参数 --end
 
-        return compact('header', 'payload', 'alg');
+        return array_values(compact('header', 'payload', 'alg'));
     }
 
     /**
