@@ -1,5 +1,6 @@
 # laravel-api-auth
-laravel API 鉴权
+laravel API 鉴权在 github.com/96qbhy/laravel-api-auth（composer require 96qbhy/laravel-api-auth）
+基础上修复bug。
 
 这是一个 laravel 的 API 鉴权包， `laravel-api-auth` 采用 `jwt token` 的鉴权方式，只要客户端不被反编译从而泄露密钥，该鉴权方式理论上来说是安全的。
 PS: web 前端 API 没有绝对的安全，该项目的本意是给不暴露源码的客户端提供一种鉴权方案(如 service、APP客户端)。
@@ -8,7 +9,6 @@ PS: web 前端 API 没有绝对的安全，该项目的本意是给不暴露源�
 ```bash
 composer require bei-sheng/laravel-api-auth
 ```
-
 ## 配置
 1. 注册 `ServiceProvider`: 
     ```php
@@ -47,11 +47,6 @@ composer require bei-sheng/laravel-api-auth
     `config/api_auth.php` 中的 `signature_methods` 可以添加自定义的签名类，该类需要继承自 `Qbhy\LaravelApiAuth\Signatures\SignatureInterface` 接口 
     ```php
    <?php
-    /**
-     * User: 96qbhy
-     * Date: 2018/4/16
-     * Time: 下午3:22
-     */
     
     namespace Qbhy\LaravelApiAuth\Signatures;
     
@@ -131,9 +126,15 @@ axios.post('/api/example',{},requestConfig).then(res=>{
     // todo
 });
 ```
+后端
+```php
+<?php
+    $access_key = "iRz1f6IkMbv4ur0U1RzffbFqHMT4NFdR";// 服务端生成的 access_key
+    $secret_key = "aNqs95iHpE9H5kqTsPokKwq1ytz4jrJP";// 服务端生成的 secret_key
+    $header = ["alg" => "md5", "type" => "jwt"];
+    $payload = ["timestamp" => time(), "echostr" => uniqid(), "ak" => $access_key];
+    $signature_string = base64_encode(json_encode($header)) . '.' . base64_encode(json_encode($payload));
+    $api_token = $signature_string . '.' . strtoupper(md5($signature_string . $secret_key));
+```
 > 本例子为 `web` 前端的例子，其他客户端同理，生成签名并且带上指定参数即可正常请求。
 > 通过自定义签名方法和自定义校验方法，可以使用其他加密方法进行签名，例如 `哈希` 等其他加密算法。
-
-
-
-[xxxx.com](https://xxxx.com)    
