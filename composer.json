@@ -18,7 +18,7 @@
     },
     "require": {},
     "require-dev": {
-        "laravel/laravel": "^5.5"
+        "laravel/laravel": "^5.8"
     },
     "extra": {
         "laravel": {
